@@ -21,9 +21,21 @@ http.request(options, function(res) {
 	});
 	res.on('end', function() {
 		var obj = JSON.parse(content);
-		console.log(obj.main.temp_max);
+		console.log(obj);
+		var maxtemp = obj.main.temp_max;
+		var cityName = obj.name;
+		// = obj.temp_max;
+		var description = obj.weather[0].description;
+		console.log("City Name is  : " + cityName);
+		console.log("Maximum Temperature in " + cityName + " is : " +   maxtemp);
+		console.log("Whats the weather like : " + description);
+
 	});
 }).end();
+
+
+
+
 
 
 
